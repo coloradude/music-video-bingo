@@ -25,6 +25,188 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <style>
+
+      #root {
+        height: 100vh;
+      }
+
+      .player-container {
+        position: relative;
+        width: 80%%;
+        height: 80%;
+      }
+  
+      /* Frosted glass effect div */
+      .frosty-div {
+        position: absolute;
+        top: 0;
+        left: 50%; /* Position it relative to the left edge of the container */
+        transform: translateX(-50%);
+        width: 100%; /* Full width of the container */
+        height: 70px; /* Height of 50px */
+        background: rgba(255, 255, 255, 0.01); 
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.7));
+
+        backdrop-filter: blur(5px); /* Frosty blur effect */
+        -webkit-backdrop-filter: blur(10px); /* Frosty blur effect for Safari */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        color: #333; /* Text color */
+        font-size: 14px;
+      }
+
+      .frosty-blur {
+      width: 100%;
+      height: 70px;
+      background: rgba(255, 255, 255, 0);
+      position: absolute;
+      /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .frosty-blur::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit; /* Inherit the background */
+      backdrop-filter: blur(10px); /* Apply the blur */
+      -webkit-backdrop-filter: blur(10px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .frosty-blur::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)); /* Gradient fading from top to bottom */
+      backdrop-filter: blur(1px); /* Apply lighter blur towards the bottom */
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* Animation for blur effect */
+    @keyframes decrease-blur {
+      0% {
+        backdrop-filter: blur(15px);
+      }
+      100% {
+        backdrop-filter: blur(0px);
+      }
+    }
+
+
+
+/* Base Stylesheet for an 80s-Inspired Design */
+
+/* Base Stylesheet for an 80s-Inspired Design */
+
+/* Root Variables for 80s Neon Colors and Fonts */
+:root {
+  --primary-color: #ff00ff; /* Bright neon magenta */
+  --secondary-color: #00ffff; /* Neon cyan */
+  --accent-color: #ffff00; /* Neon yellow */
+  --background-color: #000000; /* Black background for high contrast */
+  --text-color: #ffffff; /* White text for contrast */
+  --font-family-primary: 'Press Start 2P', 'Courier', monospace; /* Pixelated 80s retro font */
+  --font-family-secondary: 'Arial', sans-serif; /* Simple sans-serif for body */
+  --border-radius: 8px; /* Soft border radius for buttons and elements */
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
+  padding: 20px;
+  background-image: linear-gradient(to right, #ff00ff, #00ffff); /* 80s-style gradient background */
+  background-size: cover;
+  text-align: center;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-primary);
+  color: #ffffff; /* Brighter white to contrast against the black background */
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8); /* Glowing text shadow */
+}
+
+/* Paragraphs */
+p {
+  font-family: var(--font-family-secondary);
+  color: var(--text-color);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+/* Links */
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+/* Buttons */
+button {
+  font-family: var(--font-family-secondary);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.8); /* Glowing 80s-style button shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin: 0px 20px;
+  max-width: 90%;
+  min-width: 200px;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 5px 5px 15px rgba(0, 255, 255, 0.6); /* Glowing effect on hover */
+}
+
+/* Inputs */
+input, textarea, select {
+  font-family: var(--font-family-secondary);
+  background
+
+      
+    </style>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
